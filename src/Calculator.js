@@ -1,10 +1,6 @@
 function Calculator() {
 }
 
-Calculator.prototype.calculateMinsSum = function (value) {
-    if (!value) {
-        return 0;
-    }
+Calculator.prototype.calculateMinsSum = function (list) {
 
-    return Number(value);
 };
