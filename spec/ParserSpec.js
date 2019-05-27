@@ -4,12 +4,12 @@ describe('Parser.strToArrayOfNumbers', function () {
     it('returns [] if value is empty', function () {
         var result = parser.strToArrayOfNumbers('');
 
-        expect(result).toBe([]);
+        expect(result).toEqual([]);
     });
 
     it('returns array with a single number if value is a single number', function () {
         var result = parser.strToArrayOfNumbers('100');
 
-        expect(result).toBe([100]);
+        expect(result).toEqual([100]);
     });
 });
