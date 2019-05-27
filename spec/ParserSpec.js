@@ -12,4 +12,10 @@ describe('Parser.strToArrayOfNumbers', function () {
 
         expect(result).toEqual([100]);
     });
+
+    it('returns list of numbers in a fully valid string', function () {
+        var result = parser.strToArrayOfNumbers('4,0,3,19,492,-10,1');
+
+        expect(result).toEqual([4, 0, 3, 19, 492, -10, 1]);
+    });
 });
