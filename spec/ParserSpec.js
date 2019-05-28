@@ -18,4 +18,10 @@ describe('Parser.strToArrayOfNumbers', function () {
 
         expect(result).toEqual([4, 0, 3, 19, 492, -10, 1]);
     });
+
+    it('returns list of numbers and NaNs', function () {
+        var result = parser.strToArrayOfNumbers('true, 1,j,8,oilul,-1');
+
+        expect(result).toEqual([NaN, 1, NaN, 8, NaN, -1]);
+    });
 });

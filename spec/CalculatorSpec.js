@@ -66,4 +66,10 @@ describe('Calculator.calculateMinsSum', function () {
 
         expect(result).toBe(3);
     });
+
+    it('order dependent case with 3 numbers and NaNs', function () {
+        const result = calculator.calculateMinsSum([NaN, 1, NaN, 8, NaN, -1]);
+
+        expect(result).toBe(0);
+    });
 });

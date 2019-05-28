@@ -23,6 +23,14 @@ Calculator.prototype.calculateMinsSum = function (list) {
 
         if (typeof min1 === 'undefined') {
             min1 = currentNumber;
+
+            if (min1 > min2) {
+                const tmp = min1;
+
+                min1 = min2;
+                min2 = tmp;
+            }
+
             continue;
         }
 
