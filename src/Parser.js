@@ -2,12 +2,13 @@ function Parser() {
 }
 
 Parser.prototype.strToArrayOfNumbers = function (string) {
-    if (!string) {
-        return [];
-    }
+    const result = [];
 
-    var result = [];
-    var buffer = '';
+    if (!string) {
+        return result;
+    }
+    
+    let buffer = '';
 
     for (let i = 0; i < string.length; i++) {
         const currentSymbol = string[i];
@@ -19,6 +20,7 @@ Parser.prototype.strToArrayOfNumbers = function (string) {
             buffer = '';
         }
     }
+    
     result.push(Number(buffer));
 
     return result;
