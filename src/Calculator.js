@@ -6,6 +6,10 @@ Calculator.prototype.calculateMinsSum = function (list) {
         return 0;
     }
 
+    if (list.length === 1) {
+        return list[0];
+    }
+
     let min1 = list[0];
     let min2 = list[1];
 
