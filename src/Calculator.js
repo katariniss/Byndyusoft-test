@@ -7,15 +7,19 @@ Calculator.prototype.calculateMinsSum = function (list) {
     }
 
     if (list.length === 1) {
-        return list[0];
+        const firstElement = list[0];
+
+        return isNaN(firstElement)
+            ? 0
+            : firstElement;
     }
 
     let min1 = list[0];
     let min2 = list[1];
 
     if (min1 > min2) {
-       min2 = min1;
-       min1 = list[1]; 
+        min2 = min1;
+        min1 = list[1];
     }
 
     for (let i = 2; i < list.length; i++) {
@@ -26,7 +30,7 @@ Calculator.prototype.calculateMinsSum = function (list) {
 
             if (min2 < min1) {
                 const tmp = min1;
-                
+
                 min1 = min2;
                 min2 = tmp;
             }
