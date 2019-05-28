@@ -4,16 +4,17 @@
 <head>
     <meta charset="utf-8">
     <title>Тестовое задание</title>
+    <link href="src/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <form>
-        <label for="input">
-            <span>Введите числа через запятую:</span>
-            <input type="text" name="input" id="input">
-        </label>
-        <button class="submit-button" type="submit">Посчитать</button>
-        <span id="output"></span>
+    <form class="form">
+        <input class="form__input" type="text" placeholder="Введите числа через запятую">
+        <button class="form__button" type="submit">Посчитать</button>
+        <div class="form__output">
+            <div>Сумма двух наименьших чисел:</div>
+            <span class="form__output-text"></span>
+        </div>
     </form>
     <script src="src/Parser.js"></script>
     <script src="src/Calculator.js"></script>
