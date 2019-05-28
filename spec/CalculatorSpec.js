@@ -36,4 +36,28 @@ describe('Calculator.calculateMinsSum', function () {
 
         expect(result).toBe(-11);
     });
+
+    it('returns 0 if list contains no numbers', function () {
+        var result = calculator.calculateMinsSum(['test', true, undefined, false, null, NaN]);
+
+        expect(result).toBe(0);
+    });
+
+    it('returns sum of min numbers if list contains not only numbers', function () {
+        var result = calculator.calculateMinsSum(['test', 2, true, undefined, -1, false, null, NaN]);
+
+        expect(result).toBe(1);
+    });
+
+    it('returns a number if list contains 1 number and other stuff', function () {
+        var result = calculator.calculateMinsSum(['test', 2, true, undefined, false, null, NaN]);
+
+        expect(result).toBe(2);
+    });
+
+    it('returns sum of min numbers if list contains 3 numbers at the beginning and other stuff', function () {
+        var result = calculator.calculateMinsSum([2, 1, 3, 'test', true, undefined, false, null, NaN]);
+
+        expect(result).toBe(3);
+    });
 });
