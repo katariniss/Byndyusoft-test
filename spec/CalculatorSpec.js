@@ -37,6 +37,12 @@ describe('Calculator.calculateMinsSum', function () {
         expect(result).toBe(-11);
     });
 
+    it('returns 0 if list contains 1 element which is not a number', function () {
+        var result = calculator.calculateMinsSum(['test']);
+
+        expect(result).toBe(0);
+    });
+
     it('returns 0 if list contains no numbers', function () {
         var result = calculator.calculateMinsSum(['test', true, undefined, false, null, NaN]);
 
