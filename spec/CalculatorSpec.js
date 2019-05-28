@@ -13,6 +13,18 @@ describe('Calculator.calculateMinsSum', function () {
         expect(result).toBe(100);
     });
 
+    it('returns sum if list contains 2 descending numbers', function () {
+        var result = calculator.calculateMinsSum([5, 3]);
+
+        expect(result).toBe(8);
+    });
+
+    it('returns sum if list contains 2 ascending numbers', function () {
+        var result = calculator.calculateMinsSum([3, 5]);
+
+        expect(result).toBe(8);
+    });
+
     it('returns sum of 2 min numbers in a fully valid string (with 0)', function () {
         var result = calculator.calculateMinsSum([4, 0, 3, 19, 492, -10, 1]);
 
