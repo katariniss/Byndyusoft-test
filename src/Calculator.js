@@ -6,24 +6,25 @@ Calculator.prototype.calculateMinsSum = function (list) {
         return 0;
     }
 
-    if (list.length === 1) {
-        const firstElement = list[0];
+    let min1;
+    let min2;
 
-        return isNaN(firstElement)
-            ? 0
-            : firstElement;
-    }
-
-    let min1 = list[0];
-    let min2 = list[1];
-
-    if (min1 > min2) {
-        min2 = min1;
-        min1 = list[1];
-    }
-
-    for (let i = 2; i < list.length; i++) {
+    for (let i = 0; i < list.length; i++) {
         const currentNumber = list[i];
+
+        if (isNotNumber(currentNumber)) {
+            continue;
+        }
+
+        if (typeof min2 === 'undefined') {
+            min2 = currentNumber;
+            continue;
+        }
+
+        if (typeof min1 === 'undefined') {
+            min1 = currentNumber;
+            continue;
+        }
 
         if (currentNumber < min2) {
             min2 = currentNumber;
@@ -37,5 +38,19 @@ Calculator.prototype.calculateMinsSum = function (list) {
         }
     }
 
+    if (typeof min1 === 'undefined') {
+        return typeof min2 === 'undefined'
+            ? 0
+            : min2;
+    }
+
     return min1 + min2;
 };
+
+function isNotNumber(n) {
+    if (typeof n !== 'number') {
+        return true;
+    }
+
+    return isNaN(n);
+}
